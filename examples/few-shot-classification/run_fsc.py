@@ -48,6 +48,7 @@ def main(config: "DictConfig"):
     trainer = make_trainer(algo_module, train_dataset, val_dataset, config)
     trainer.train(config=config)
 
+##
 
 if __name__ == "__main__":
     main()
