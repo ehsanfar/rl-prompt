@@ -14,13 +14,11 @@ from fsc_helpers import (PromptedClassificationRewardConfig,
                          make_prompted_classification_reward,
                          make_few_shot_classification_dataset)
 
-
 # Compose default config
 config_list = [PromptedClassificationRewardConfig,
                 FewShotClassificationDatasetConfig, LMAdaptorModelConfig,
                 SinglePromptModelConfig, SQLModuleConfig, TrainerConfig]
 cs = compose_hydra_config_store('base_fsc', config_list)
-
 
 @hydra.main(version_base=None, config_path="./", config_name="fsc_config")
 def main(config: "DictConfig"):
@@ -49,6 +47,5 @@ def main(config: "DictConfig"):
     trainer.train(config=config)
 
 ##
-
 if __name__ == "__main__":
     main()
