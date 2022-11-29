@@ -9,7 +9,7 @@ from rlprompt.modules.module_utils import ForwardMode, get_reward_shaping_func
 from rlprompt.losses import sql_loss_with_sparse_rewards
 from rlprompt.utils import utils
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("mps")#"cuda" if torch.cuda.is_available() else "cpu")
 
 
 class SQLModule(BaseModule):

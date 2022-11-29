@@ -24,8 +24,7 @@ class PromptedClassificationEvaluator:
         prompt: str
     ):
         super().__init__()
-        self.device = torch.device("cuda" if torch.cuda.is_available()
-                                   else "cpu")
+        self.device = torch.device("mps")#"cuda" if torch.cuda.is_available() else "cpu")
         self.task_lm = task_lm
         print("Task LM:", self.task_lm)
         if is_mask_lm is None: 

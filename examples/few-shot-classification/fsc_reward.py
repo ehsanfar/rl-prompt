@@ -23,8 +23,7 @@ class PromptedClassificationReward(BaseReward):
         template: Optional[str]
     ):
         super().__init__()
-        self.device = torch.device("cuda" if torch.cuda.is_available()
-                                   else "cpu")
+        self.device = torch.device("mps")#""cpu")#"cuda" if torch.cuda.is_available() else "cpu")
         self.task_lm = task_lm
         if is_mask_lm is None: 
             # If False, then treat as left-to-right LM
